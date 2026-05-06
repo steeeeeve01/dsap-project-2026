@@ -15,6 +15,7 @@ def load_and_preprocess(file_path, target_sr = 22050):
     except Exception as e:
         print("Loading Failed")
         return None, None
+    
 # Test Part
 if __name__ == "__main__":
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -23,7 +24,6 @@ if __name__ == "__main__":
     audio_array, sample_rate = load_and_preprocess(test_file)
     
     if audio_array is not None:
-        # 計算第 10 秒在陣列中的索引位置
         second_10_index = 10 * sample_rate
         
         print(audio_array[second_10_index:second_10_index+10])
